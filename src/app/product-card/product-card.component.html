@@ -1,0 +1,28 @@
+<!-- src/app/components/product-card/product-card.component.html -->
+
+<section class=" text-bold px-20 ">
+   
+    <div class="pt-10 w-full flex flex-wrap gap-6 items-center justify-center">
+        <div *ngFor="let product of products" class="w-48 bg-white shadow-md rounded-lg overflow-hidden mb-4">
+          <img [src]="product.image" alt="{{ product.title }}" class="h-32 object-cover p-4">
+          <div class="p-4">
+            <!-- Title with truncation for long text -->
+            <h2 class="text-xl font-semibold mb-2 truncate" title="{{ product.title }}">
+              {{ product.title }}
+            </h2>
+            <!-- Description is commented out, uncomment if needed -->
+            <!-- <p class="text-gray-600 text-base mb-2">{{ product.description }}</p> -->
+            <p class="text-gray-800 text-md font-bold mb-2">Price:  ${{ product.price.toFixed(2) }}</p>
+            <div class="flex items-center">
+              
+            </div>
+            <div>
+                <p class="mb-2">Reviews and Ratings : </p>
+              <span class=" text-gray-600"> {{ product.rating.rate }} ({{ product.rating.count }} reviews)</span>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </section>
+  
